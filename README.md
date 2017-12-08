@@ -1,5 +1,7 @@
 # ofPixelsShape
 
+<img src="sample.jpg">
+
 ```c++
 ofPixels pix;
 ofPixelsShape shape;
