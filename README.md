@@ -1,5 +1,7 @@
 # ofPixelsShape
 
+Useful for drawing simple shapes on ofPixels/ofImage out of the opengl context<br>
+
 <img src="sample.jpg">
 
 ```c++
