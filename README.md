@@ -22,7 +22,7 @@ shape.draw_point(pix, ofPoint(320, 50), ofColor::yellow);
 /* Parameter: [ofPixels|ofImage] [ofPoint xy1] [ofPoint xy2] [ofPoint xy3] [ofColor color] [bool true=fill|false=nofill] */
 shape.draw_triangle(pix,  ofPoint(50,150), ofPoint(150,150), ofPoint(50,50), ofColor::cyan);
 
-/* Parameter: [ofPixels|ofImage] [char letter] [ofPoint pos] */
+/* Parameter: [ofPixels|ofImage] [char letter] [ofPoint pos] [int size] */
 shape.draw_char(pix,   'A', ofPoint(350,100));
 
 /* Parameter: [ofPixels|ofImage] [string letters] [ofPoint pos] [int size] */
