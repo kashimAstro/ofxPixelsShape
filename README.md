@@ -1,4 +1,4 @@
-# ofPixelsShape
+# ofxPixelsShape
 
 Useful for drawing simple shapes on ofPixels/ofImage out of the opengl context<br>
 
@@ -6,7 +6,7 @@ Useful for drawing simple shapes on ofPixels/ofImage out of the opengl context<b
 
 ```c++
 ofPixels pix;
-ofPixelsShape shape;
+ofxPixelsShape shape;
 
 /* Parameter: folder letter png, with background transparent and foreground white */
 shape.create_font( "letter32x32" );
