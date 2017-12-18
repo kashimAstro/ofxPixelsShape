@@ -32,3 +32,5 @@ shape.draw_char(pix,   'A', ofPoint(350,100));
 /* Parameter: [ofPixels|ofImage] [string letters] [ofPoint pos] [int size] */
 shape.draw_string(pix, "openframeworks", ofPoint(400,200), 12);
 ```
+
+<img src="sample1.jpg">

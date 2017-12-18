@@ -33,7 +33,7 @@ struct ofxRatio
 class ofxPixelsShape 
 {
 	public:
-	const int WIDTH_LETTER;
+	int WIDTH_LETTER;
 	vector<ofxLetter> LETTER;
 	ofxPixelsShape(): WIDTH_LETTER(32) { }
 
@@ -195,8 +195,9 @@ class ofxPixelsShape
                 }
         }
 
-	void create_font(string path)
+	void create_font(string path, int _size=32)
         {
+		WIDTH_LETTER = _size;
                 vector<char> list_letter;
                 vector<ofImage> list_img;
                 ofDirectory dir(path);
