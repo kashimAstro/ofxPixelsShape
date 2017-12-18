@@ -2,7 +2,7 @@
 #include "ofAppNoWindow.h"
 #include "ofxPixelsShape.h"
 
-class ImgThread : public ofThread 
+class ImgThread : public ofThread  /* example thread */
 {
 	public:
 	ofPixels pix;
@@ -42,7 +42,7 @@ class ImgThread : public ofThread
 	}
 };
 
-class ofApp : public ofBaseApp
+class ofApp : public ofBaseApp /* example ofAppNoWindow */
 {
 	public:
 	ImgThread imgth;
@@ -80,8 +80,7 @@ class ofApp : public ofBaseApp
 			shape.draw_circle(pix,    ofPoint(100, 350), 100, 	     		     ofColor::violet, false);
 			shape.draw_point(pix,     ofPoint(320, 50), 		    		     ofColor::yellow);
 			shape.draw_triangle(pix,  ofPoint(50,150), ofPoint(150,150), ofPoint(50,50), ofColor::cyan);
-			//BUG:  no fill for triangle
-			//shape.draw_triangle(pix, ofPoint(100,250), ofPoint(450,250), ofPoint(300,50), ofColor::cyan,false);
+			shape.draw_triangle(pix,  ofPoint(400,350), ofPoint(300,350), ofPoint(200,460), ofColor::green, false);
 			shape.draw_char(pix,   'A', ofPoint(350,100));
 			shape.draw_string(pix, "openframeworks", ofPoint(400,200), 12);
 

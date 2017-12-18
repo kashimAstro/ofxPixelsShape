@@ -97,12 +97,29 @@ class ofxPixelsShape
 		int _h = _img.getHeight();
 		if(xy0.x<0||xy0.x>_w||xy0.y<0||xy0.y>_h||xy1.x<0||xy1.x>_w||xy1.y<0||xy1.y>_h||xy2.x<0||xy2.x>_w||xy2.y<0||xy2.y>_h) return -1;
 
-		draw_line(_img, xy0, xy1, color);
-		draw_line(_img, xy2, xy1, color);
-		draw_line(_img, xy2, xy0, color);
-
-		if(fill) {
-			//not work
+		if(fill) 
+		{
+	 		if (xy0.y>xy1.y) std::swap(xy0, xy1);
+		    	if (xy0.y>xy2.y) std::swap(xy0, xy2);
+		    	if (xy1.y>xy2.y) std::swap(xy1, xy2);
+		    	int total_height = xy2.y-xy0.y;
+		    	for (int y=xy0.y; y<=xy1.y; y++) {
+				int segment_height = xy1.y-xy0.y+1;
+				float alpha = (float)(y-xy0.y)/total_height;
+				float beta  = (float)(y-xy0.y)/segment_height;
+				ofPoint A = xy0 + (xy2-xy0)*alpha;
+				ofPoint B = xy0 + (xy1-xy0)*beta;
+				if (A.x>B.x) std::swap(A, B);
+				for (int j=A.x; j<=B.x; j++) {
+				    _img.setColor(j, y, color);
+				}
+		    	}
+		}
+		else
+		{
+			draw_line(_img, xy0, xy1, color);
+			draw_line(_img, xy2, xy1, color);
+			draw_line(_img, xy2, xy0, color);
 		}
 		return 1;
 	}
