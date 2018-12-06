@@ -1,3 +1,6 @@
+#ifndef HEADER_PIXEL_SHAPE
+#define HEADER_PIXEL_SHAPE
+
 #include "ofMain.h"
 
 /*
@@ -17,22 +20,22 @@
 
 */
 
-struct ofxLetter
-{
-        char letter;
-	ofImage img;
-} _letter_;
-
-struct ofxRatio 
-{
-	int w;
-	int h;
-	float ratio;
-} _ratio_ ;
-
 class ofxPixelsShape 
 {
 	public:
+	struct ofxLetter
+	{
+		char letter;
+		ofImage img;
+	} _letter_;
+
+	struct ofxRatio 
+	{
+		int w;
+		int h;
+		float ratio;
+	} _ratio_ ;
+
 	int WIDTH_LETTER;
 	vector<ofxLetter> LETTER;
 	ofxPixelsShape(): WIDTH_LETTER(32) { }
@@ -243,3 +246,4 @@ class ofxPixelsShape
 		}
         }
 };
+#endif
